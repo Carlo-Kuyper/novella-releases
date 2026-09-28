@@ -19,8 +19,23 @@ separate folder of assets, no `.env` to set up.
 2. Put it wherever you want it to live permanently, then run it. It creates
    a `data/` folder next to itself on first run (the SQLite database), so
    don't run it straight out of Downloads/temp.
+
+   **Windows**: it's unsigned (no code-signing certificate yet), so
+   SmartScreen will likely show a "Windows protected your PC" warning —
+   click **More info → Run anyway**. If you dismiss that warning instead,
+   the server never actually starts (nothing in Task Manager, nothing
+   listening on the port) — that's SmartScreen blocking it, not a broken
+   download. It doesn't install anything or show up in Control Panel/Apps
+   either — it's a plain executable you run directly, like `curl.exe`.
 3. Open `http://localhost:8080` and log in with `root` / `admin` (you'll be
    asked to change the password immediately).
+
+**Windows**: while it's running, look for a Novella icon in the system
+tray (bottom-right, near the clock) — right-click for Open/Quit. If you
+don't see it right after starting it, check the **^** overflow arrow next
+to the tray — Windows often hides a brand-new icon there until you drag it
+out or Windows "learns" to keep it visible; that's normal Windows
+behavior, not a bug.
 
 Want it running in the background / on boot instead of a terminal window?
 See [`service-setup/`](service-setup) in this repo for systemd (Linux),
