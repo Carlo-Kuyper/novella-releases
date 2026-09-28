@@ -9,20 +9,23 @@ where the downloads live.
 ## Get the server
 
 The server is the whole app — it serves its own web UI, so this is the only
-piece most people need.
+piece most people need. It's a single self-contained file: no installer, no
+separate folder of assets, no `.env` to set up.
 
-1. Go to [Releases](../../releases) and grab the archive for your OS:
-   - `novella-server-vX.Y.Z-windows-x86_64.zip`
-   - `novella-server-vX.Y.Z-linux-x86_64.tar.gz`
-   - `novella-server-vX.Y.Z-macos-aarch64.tar.gz` (Apple Silicon)
-2. Extract it, then run `server.exe` (Windows) or `./server`
-   (macOS/Linux) from inside the extracted folder.
+1. Go to [Releases](../../releases) and grab the file for your OS:
+   - `novella-server-vX.Y.Z-windows-x86_64.exe`
+   - `novella-server-vX.Y.Z-linux-x86_64` (run `chmod +x` on it first)
+   - `novella-server-vX.Y.Z-macos-aarch64` (Apple Silicon; `chmod +x` first)
+2. Put it wherever you want it to live permanently, then run it. It creates
+   a `data/` folder next to itself on first run (the SQLite database), so
+   don't run it straight out of Downloads/temp.
 3. Open `http://localhost:8080` and log in with `root` / `admin` (you'll be
    asked to change the password immediately).
 
-Each archive includes templates for running it as a background
-service/daemon on boot (systemd/launchd/Task Scheduler) — see the
-`README.txt` inside the archive.
+Want it running in the background / on boot instead of a terminal window?
+See [`service-setup/`](service-setup) in this repo for systemd (Linux),
+launchd (macOS), and Task Scheduler (Windows) templates — one set, reused
+across every version, since they don't change per release.
 
 ### Or run it with Docker
 

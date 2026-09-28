@@ -1,0 +1,33 @@
+# systemd unit for running Novella as a Linux service.
+#
+# The novella-server-vX.Y.Z-linux-x86_64 download is a single self-contained
+# binary (no separate web/ folder, no .env needed) -- rename it to `server`
+# once you pick a permanent location.
+#
+# Install:
+#   sudo mkdir -p /opt/novella
+#   sudo cp novella-server-vX.Y.Z-linux-x86_64 /opt/novella/server
+#   sudo chmod +x /opt/novella/server
+#   sudo useradd --system --home /opt/novella --shell /usr/sbin/nologin novella
+#   sudo chown -R novella:novella /opt/novella
+#   sudo cp novella.service.example /etc/systemd/system/novella.service
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now novella
+#
+# Logs: journalctl -u novella -f
+
+[Unit]
+Description=Novella self-hosted audiobook/ebook server
+After=network.target
+
+[Service]
+Type=simple
+User=novella
+Group=novella
+WorkingDirectory=/opt/novella
+ExecStart=/opt/novella/server
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

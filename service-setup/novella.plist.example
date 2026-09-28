@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- launchd job for running Novella as a background service on macOS.
+
+The novella-server-vX.Y.Z-macos-aarch64 download is a single self-contained
+binary (no separate web/ folder, no .env needed).
+
+Install:
+  mkdir -p ~/Applications/novella
+  cp novella-server-vX.Y.Z-macos-aarch64 ~/Applications/novella/server
+  chmod +x ~/Applications/novella/server
+  cp novella.plist.example ~/Library/LaunchAgents/com.novella.server.plist
+  # edit the paths below to match wherever you actually placed the binary
+  launchctl load ~/Library/LaunchAgents/com.novella.server.plist
+
+Logs: ~/Applications/novella/novella.log
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.novella.server</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/YOUR_USERNAME/Applications/novella/server</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/YOUR_USERNAME/Applications/novella</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/YOUR_USERNAME/Applications/novella/novella.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/YOUR_USERNAME/Applications/novella/novella.log</string>
+</dict>
+</plist>
