@@ -12,9 +12,9 @@ The server is the whole app — it serves its own web UI, so this is the only
 piece most people need.
 
 1. Go to [Releases](../../releases) and grab the archive for your OS:
-   - `novella-vX.Y.Z-windows-x86_64.zip`
-   - `novella-vX.Y.Z-linux-x86_64.tar.gz`
-   - `novella-vX.Y.Z-macos-aarch64.tar.gz` (Apple Silicon)
+   - `novella-server-vX.Y.Z-windows-x86_64.zip`
+   - `novella-server-vX.Y.Z-linux-x86_64.tar.gz`
+   - `novella-server-vX.Y.Z-macos-aarch64.tar.gz` (Apple Silicon)
 2. Extract it, then run `server.exe` (Windows) or `./server`
    (macOS/Linux) from inside the extracted folder.
 3. Open `http://localhost:8080` and log in with `root` / `admin` (you'll be
@@ -43,9 +43,11 @@ A native window that connects to a Novella server you already have running
 (it does **not** bundle its own server). Windows/macOS/Linux installers are
 attached to each [release](../../releases):
 
-- Windows: `.msi` or `.exe`
-- macOS: `.dmg`
-- Linux: `.deb` or `.AppImage`
+- Windows: `novella-desktop-vX.Y.Z-windows-x86_64.msi` or
+  `novella-desktop-vX.Y.Z-windows-x86_64-setup.exe`
+- macOS: `novella-desktop-vX.Y.Z-macos-aarch64.dmg`
+- Linux: `novella-desktop-vX.Y.Z-linux-x86_64.deb` or
+  `novella-desktop-vX.Y.Z-linux-x86_64.AppImage`
 
 These installers are currently **unsigned** — expect a SmartScreen
 (Windows) or Gatekeeper (macOS) warning on first run. That's expected for
@@ -54,7 +56,9 @@ release if you want to double check.
 
 ## Mobile app
 
-Not published here yet — coming in a future update.
+Not published here yet — coming in a future update. When it lands it'll
+follow the same naming pattern as everything else:
+`novella-mobile-vX.Y.Z-android.apk` and `novella-mobile-vX.Y.Z-ios.ipa`.
 
 ## Verifying a download
 
