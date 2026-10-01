@@ -1,6 +1,6 @@
 # Novella — downloads
 
-Pre-built binaries for [Novella](https://github.com/Carlo-Kuyper), a
+Pre-built binaries for [Novella](https://github.com/pixelated-digital-studio), a
 self-hosted audiobook and ebook library. **This repo has no source code in
 it on purpose** — it only holds built releases published automatically by
 CI from the (private) source repo. Novella itself is free; this is just
@@ -49,7 +49,7 @@ docker run -d \
   --name novella \
   -p 8080:8080 \
   -v novella-data:/app/data \
-  ghcr.io/carlo-kuyper/novella:latest
+  ghcr.io/pixelated-digital-studio/novella:latest
 ```
 
 Or pin a specific version instead of `latest`: check the
