@@ -13,7 +13,7 @@ failure:
    - Name: `Novella`
    - "Run whether user is logged on or not"
    - "Run with highest privileges" (only needed if binding to a low port;
-     not required for the default `0.0.0.0:8080`)
+     not required for the default `0.0.0.0:3939`)
 4. **Triggers** tab -> New -> "At startup".
 5. **Actions** tab -> New -> Start a program:
    - Program/script: `C:\Novella\server.exe`
@@ -23,7 +23,7 @@ failure:
    - "If the task fails, restart every" 1 minute, up to 3 times (or more)
    - "If the running task does not end when requested, force it to stop"
 7. Save, then right-click the task -> Run, and check
-   `http://localhost:8080` loads.
+   `http://localhost:3939` loads.
 
 Logs go to stdout only today (no file logging) — run `server.exe` from a
 terminal instead of via Task Scheduler if you need to watch logs live.

@@ -27,7 +27,7 @@ separate folder of assets, no `.env` to set up.
    listening on the port) — that's SmartScreen blocking it, not a broken
    download. It doesn't install anything or show up in Control Panel/Apps
    either — it's a plain executable you run directly, like `curl.exe`.
-3. Open `http://localhost:8080` and log in with `root` / `admin` (you'll be
+3. Open `http://localhost:3939` and log in with `root` / `admin` (you'll be
    asked to change the password immediately).
 
 **Windows**: while it's running, look for a Novella icon in the system
@@ -47,7 +47,7 @@ across every version, since they don't change per release.
 ```bash
 docker run -d \
   --name novella \
-  -p 8080:8080 \
+  -p 3939:3939 \
   -v novella-data:/app/data \
   ghcr.io/pixelated-digital-studio/novella:latest
 ```
